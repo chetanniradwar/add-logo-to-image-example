@@ -32,19 +32,20 @@ def add_watermark_to_image(image_link):
     abs_output_path = os.path.abspath(output_path)
 
     image_width, image_height = image.size
+
     # resize the logo to a suitable size (e.g., 100x100)
-    logo_width, logo_height = logo.size
-    logo_size = (int(image_width * (10 / 100)), int(image_height * (10 / 100)))
+    logo_size = (int(image_width / 9), int(image_height / 21))
+
     logo = logo.resize(logo_size)
 
-    # calculate the position to place the logo in the top right corner
-    logo_x = image_width - int(image_width * (1 / 100)) - logo_width
-    logo_y = int(image_height * (5 / 100))
+    # calculate the position to place the logo
+    horizontal_margin = image_width - int(image_width / 35) - logo_size[0]
+    vertical_margin = int(image_height / 30)
 
     # paste the logo onto the image
-    image.paste(logo, (logo_x, logo_y), mask=logo)
+    image.paste(logo, (horizontal_margin, vertical_margin), mask=logo)
 
-    # dave the modified image
+    # save the modified image
     image.save(abs_output_path)
 
     # upload output image to server and return the link
