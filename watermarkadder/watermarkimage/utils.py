@@ -1,12 +1,10 @@
-import base64
 import glob
-import io
 import os
 import urllib
 from datetime import datetime
 
 import boto3
-import six
+
 from PIL import Image as img
 
 from .enums import AWS_ID, AWS_SECRET
