@@ -17,7 +17,7 @@
 
 
 ## Postman documentation link
-- [postman doc link](https://documenter.getpostman.com/view/20803750/2s93mAVLW8)
+- [postman doc link](https://documenter.getpostman.com/view/20803750/2s93mByKQT)
 
 
 ## Technologies Used
